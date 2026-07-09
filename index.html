@@ -89,11 +89,11 @@
     <div id="cover-container" class="fixed inset-0 z-50 flex w-full h-full pointer-events-none" style="perspective: 2000px;">
         
         <!-- PUERTA IZQUIERDA -->
-        <div id="door-left" class="w-1/2 h-full bg-genoveva-bg absolute left-0 top-0 border-r border-genoveva-dark/10 shadow-[5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: left; will-change: transform; transition: transform 0.1s ease-out;">
+        <div id="door-left" class="w-1/2 h-full bg-genoveva-bg absolute left-0 top-0 border-r border-genoveva-dark/10 shadow-[5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: left; will-change: transform; transition: transform 0.1s ease-out; backface-visibility: hidden; -webkit-backface-visibility: hidden;">
             <div class="absolute top-0 left-0 w-[200%] h-full flex flex-col items-center justify-center pb-[10vh]">
                 <!-- TEXTO -->
                 <div class="pb-10 flex flex-col items-center text-center z-30 w-full px-6">
-                    <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
+                    <div class="bg-white/90 rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
                         <h1 class="font-oswald text-6xl md:text-8xl lg:text-9xl text-genoveva-gold tracking-tight font-medium uppercase" style="transform: scaleY(1.2);">
                             LA GENOVEVA
                         </h1>
@@ -112,7 +112,7 @@
                 
                 <!-- BOTÓN -->
                 <div class="mt-12 z-30 pointer-events-auto flex justify-center w-full">
-                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/40 backdrop-blur-md border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
+                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/90 border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
                         <span data-i18n="cover-btn">Desliza o toca aquí</span>
                     </button>
                 </div>
@@ -120,11 +120,11 @@
         </div>
         
         <!-- PUERTA DERECHA -->
-        <div id="door-right" class="w-1/2 h-full bg-genoveva-bg absolute right-0 top-0 border-l border-genoveva-dark/10 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: right; will-change: transform; transition: transform 0.1s ease-out;">
+        <div id="door-right" class="w-1/2 h-full bg-genoveva-bg absolute right-0 top-0 border-l border-genoveva-dark/10 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: right; will-change: transform; transition: transform 0.1s ease-out; backface-visibility: hidden; -webkit-backface-visibility: hidden;">
             <div class="absolute top-0 right-0 w-[200%] h-full flex flex-col items-center justify-center pb-[10vh]">
                 <!-- TEXTO -->
                 <div class="pb-10 flex flex-col items-center text-center z-30 w-full px-6">
-                    <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
+                    <div class="bg-white/90 rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
                         <h1 class="font-oswald text-6xl md:text-8xl lg:text-9xl text-genoveva-gold tracking-tight font-medium uppercase" style="transform: scaleY(1.2);">
                             LA GENOVEVA
                         </h1>
@@ -143,7 +143,7 @@
                 
                 <!-- BOTÓN -->
                 <div class="mt-12 z-30 pointer-events-auto flex justify-center w-full">
-                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/40 backdrop-blur-md border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
+                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/90 border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
                         <span data-i18n="cover-btn">Desliza o toca aquí</span>
                     </button>
                 </div>
@@ -693,8 +693,8 @@
             // Rotación de las puertas (hasta 120 grados)
             const angle = progress * 120;
             
-            doorLeft.style.transform = `rotateY(${-angle}deg)`;
-            doorRight.style.transform = `rotateY(${angle}deg)`;
+            doorLeft.style.transform = `rotateY(${-angle}deg) translateZ(0)`;
+            doorRight.style.transform = `rotateY(${angle}deg) translateZ(0)`;
             
             // Mostrar botón flotante solo cuando la carta está abierta
             if (progress > 0.8) {
