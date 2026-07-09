@@ -684,7 +684,9 @@
             const scrollY = window.scrollY;
             
             // Calculamos el progreso de 0 a 1 basado en el espaciador inicial
-            let progress = scrollY / triggerHeight;
+            let rawProgress = scrollY / triggerHeight;
+            // Aceleramos la apertura para que termine antes de que el contenido suba demasiado (x2.5)
+            let progress = rawProgress * 2.5;
             if (progress > 1) progress = 1;
             if (progress < 0) progress = 0;
             
