@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LA GENOVEVA - CHICHERIA CON HISTORIA</title>
+    <link rel="icon" type="image/png" href="ILUSTRACIONES/%234B2C2C/_chicha.png">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="LA GENOVEVA - CHICHERIA CON HISTORIA">
+    <meta property="og:description" content="Chichería con historia en Tilcara, Jujuy. Vení a probar nuestros sabores andinos y preparaciones milenarias.">
+    <meta property="og:image" content="ILUSTRACIONES/%234B2C2C/cerros%20continuo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Fuentes tipográficas idénticas al diseño: Oswald (Títulos) y Outfit (Cuerpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN para despliegue sin backend/build process) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configuración de colores exactos del diseño actualizado -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'genoveva-bg': '#e5dcd3',    /* Fondo general arena/beige */
+                        'genoveva-dark': '#4a363a',  /* Textos oscuros / púrpuras */
+                        'genoveva-gold': '#c19a62',  /* Logo y destacados */
+                        'genoveva-light': '#F5F5F5', /* Textos claros */
+                        /* Colores específicos de las etiquetas (Pills) según el nuevo diseño */
+                        'pill-entradas': '#4b3026',
+                        'pill-principales': '#6c5043',
+                        'pill-empanadas': '#7a607c',
+                        'pill-carnes': '#7f6685',
+                        'pill-ensaladas': '#3f2a24',
+                        'pill-sopas': '#e1d2b8',
+                        'pill-postres': '#dbbc7a',
+                        'pill-bebidas': '#cdae86',
+                        'pill-vinos': '#46272b'
+                    },
+                    fontFamily: {
+                        'oswald': ['Oswald', 'sans-serif'],
+                        'outfit': ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Scrollbar estilizado */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #e5dcd3; }
+        ::-webkit-scrollbar-thumb { background: #c19a62; border-radius: 4px; }
+
+        /* Background pattern sutil para simular papel/textura */
+        .bg-texture {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+    
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        @keyframes pulse-highlight {
+            0%, 100% { background-color: #99795a; transform: scale(1); box-shadow: none; }
+            50% { background-color: #a88a6c; transform: scale(1.02); box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); border-color: rgba(255,255,255,0.5); }
+        }
+        .animate-pulse-highlight {
+            animation: pulse-highlight 2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-genoveva-bg text-genoveva-dark font-outfit antialiased relative overflow-x-hidden" id="body">
+
+    <!-- Espaciador para la animación de scroll de las puertas -->
+    <div id="scroll-spacer" class="w-full" style="height: 90vh;"></div>
+
+    <!-- ========================================== -->
+    <!-- 1. PORTADA (EXTERIOR DE LA CARTA)          -->
+    <!-- ========================================== -->
+    <div id="cover-container" class="fixed inset-0 z-50 flex w-full h-full pointer-events-none" style="perspective: 2000px;">
+        
+        <!-- PUERTA IZQUIERDA -->
+        <div id="door-left" class="w-1/2 h-full bg-genoveva-bg absolute left-0 top-0 border-r border-genoveva-dark/10 shadow-[5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: left; will-change: transform;">
+            <div class="absolute top-0 left-0 w-[200%] h-full flex flex-col items-center justify-center pb-[10vh]">
+                <!-- TEXTO -->
+                <div class="pb-10 flex flex-col items-center text-center z-30 w-full px-6">
+                    <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
+                        <h1 class="font-oswald text-6xl md:text-8xl lg:text-9xl text-genoveva-gold tracking-tight font-medium uppercase" style="transform: scaleY(1.2);">
+                            LA GENOVEVA
+                        </h1>
+                        <div class="flex items-center justify-center gap-4 mt-6 w-full max-w-2xl">
+                            <div class="h-1 flex-1 bg-genoveva-gold hidden md:block"></div>
+                            <p class="font-oswald text-genoveva-gold text-lg md:text-2xl tracking-[0.3em] uppercase whitespace-nowrap">
+                                <span data-i18n="cover-subtitle">Chichería con Historia</span>
+                            </p>
+                            <div class="h-1 flex-1 bg-genoveva-gold hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IMAGEN CERROS (Nunca se recorta, empujada al fondo) -->
+                <img src="ILUSTRACIONES/%234B2C2C/cerros%20continuo.png" class="absolute bottom-0 left-0 w-full h-auto object-bottom opacity-100 z-10 pointer-events-none" alt="" />
+                
+                <!-- BOTÓN -->
+                <div class="mt-12 z-30 pointer-events-auto flex justify-center w-full">
+                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/40 backdrop-blur-md border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
+                        <span data-i18n="cover-btn">Desliza o toca aquí</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PUERTA DERECHA -->
+        <div id="door-right" class="w-1/2 h-full bg-genoveva-bg absolute right-0 top-0 border-l border-genoveva-dark/10 shadow-[-5px_0_15px_rgba(0,0,0,0.1)] z-10 overflow-hidden" style="transform-origin: right; will-change: transform;">
+            <div class="absolute top-0 right-0 w-[200%] h-full flex flex-col items-center justify-center pb-[10vh]">
+                <!-- TEXTO -->
+                <div class="pb-10 flex flex-col items-center text-center z-30 w-full px-6">
+                    <div class="bg-white/40 backdrop-blur-md rounded-3xl px-8 py-6 md:px-16 md:py-10 shadow-sm border border-white/60 flex flex-col items-center justify-center max-w-[90vw]">
+                        <h1 class="font-oswald text-6xl md:text-8xl lg:text-9xl text-genoveva-gold tracking-tight font-medium uppercase" style="transform: scaleY(1.2);">
+                            LA GENOVEVA
+                        </h1>
+                        <div class="flex items-center justify-center gap-4 mt-6 w-full max-w-2xl">
+                            <div class="h-1 flex-1 bg-genoveva-gold hidden md:block"></div>
+                            <p class="font-oswald text-genoveva-gold text-lg md:text-2xl tracking-[0.3em] uppercase whitespace-nowrap">
+                                <span data-i18n="cover-subtitle">Chichería con Historia</span>
+                            </p>
+                            <div class="h-1 flex-1 bg-genoveva-gold hidden md:block"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- IMAGEN CERROS -->
+                <img src="ILUSTRACIONES/%234B2C2C/cerros%20continuo.png" class="absolute bottom-0 right-0 w-full h-auto object-bottom opacity-100 z-10 pointer-events-none" alt="" />
+                
+                <!-- BOTÓN -->
+                <div class="mt-12 z-30 pointer-events-auto flex justify-center w-full">
+                    <button onclick="abrirCarta()" class="px-10 py-5 bg-white/40 backdrop-blur-md border border-white/60 text-genoveva-dark font-oswald text-xl md:text-2xl uppercase tracking-widest transition-all duration-300 rounded-full cursor-pointer shadow-sm hover:bg-genoveva-dark hover:text-white hover:border-genoveva-dark hover:shadow-lg">
+                        <span data-i18n="cover-btn">Desliza o toca aquí</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ========================================== -->
+    <!-- 2. CONTENIDO PRINCIPAL (INTERIOR CARTA)    -->
+    <!-- ========================================== -->
+    <main id="main-content" class="relative z-10 w-full bg-texture pb-20 pt-10">
+        
+        <!-- HEADER / HISTORIA -->
+        <section class="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center reveal">
+            <h2 class="font-oswald text-4xl md:text-5xl uppercase tracking-widest mb-8 border-b border-genoveva-dark/20 pb-4 inline-block"><span data-i18n="historia-title">Nuestra Historia</span></h2>
+            <p class="text-lg md:text-xl leading-relaxed text-justify md:text-center font-light text-genoveva-dark/90">
+                <span data-i18n="historia-p1">Esta carta lleva consigo la historia, la cultura y el amor por nuestro pueblo. En cada preparación evocamos a quienes amamos. Te invitamos a descubrir, a través de nuestros sabores, el legado de nuestras familias, quienes trabajaron y cuidaron la tierra, pero sobre todo preservaron preparaciones milenarias.</span>
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed text-justify md:text-center font-light mt-4 text-genoveva-dark/90">
+                <span data-i18n="historia-p2">La Genoveva, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.</span>
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed text-justify md:text-center font-light mt-4 italic text-genoveva-dark/90">
+                <span data-i18n="historia-p3">Esta carta está dedicada a las mujeres que han conservado las cocinas y sus técnicas ancestrales, y a quienes cultivan la tierra con respeto y dedicación en estos tiempos.</span>
+            </p>
+            <p class="font-oswald text-xl text-right mt-6 tracking-wider">Amancay Gaspar</p>
+        </section>
+
+        <!-- SECCIÓN DESTACADA: CHICHAS (Fondo Arena Oscuro) -->
+        <section id="chichas-section" class="bg-[#c29d6f] w-full text-genoveva-dark py-16 px-6 shadow-inner relative reveal">
+            <!-- Ilustración Chicha -->
+            <img src="ILUSTRACIONES/%234B2C2C/_chicha.png" class="absolute right-0 top-10 w-40 opacity-20 pointer-events-none md:w-64 rotate-12" loading="lazy" alt="Chicha decorativa">
+            
+            <div class="max-w-5xl mx-auto relative z-10">
+                <div class="text-center mb-12">
+                    <div class="bg-white/40 inline-block px-10 py-4 rounded-xl backdrop-blur-sm border border-white/50 mb-6 shadow-sm">
+                        <h2 class="font-oswald text-4xl md:text-5xl uppercase tracking-widest"><span data-i18n="chichas-title">Chichas de la Genoveva</span></h2>
+                    </div>
+                    
+                    <!-- Precios en Píldoras -->
+                    <div class="flex flex-wrap justify-center gap-4 font-oswald text-lg md:text-xl tracking-wider">
+                        <div class="bg-[#dfc4a2] px-6 py-2 rounded-full shadow-sm"><span data-i18n="botella-chica">Botella chica:</span> $5.000</div>
+                        <div class="bg-[#dfc4a2] px-6 py-2 rounded-full shadow-sm"><span data-i18n="jarra-media">Jarra ½ l:</span> $8.000</div>
+                        <div class="bg-[#dfc4a2] px-6 py-2 rounded-full shadow-sm"><span data-i18n="jarra-1l">Jarra 1l:</span> $12.000</div>
+                    </div>
+                    <p class="font-outfit font-medium text-base mt-6 opacity-90"><span data-i18n="maridaje">Maridaje recomendado: señalado por línea de color</span></p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Item Chicha -->
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-maiz">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-maiz">- Chicha de maíz:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#a64d26] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-maiz-desc">Bebida ancestral prehispánica y emblema cultural de nuestra tierra, presente en nuestras celebraciones. Sabor intenso y su acidez en boca evocan notas a pan y un sutil dejo cítrico. Es un símbolo de identidad, encuentro y memoria de nuestros pueblos.</span></p>
+                    </div>
+
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-maiz">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-mani">- Chicha de maní:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#d2ae82] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-mani-desc">Combina delicadas notas de café con un dulce sutil y un toque terroso, evocando tradiciones y momentos compartidos en torno a las celebraciones de nuestra cultura.</span></p>
+                    </div>
+
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-mani">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-tecjti">- Chicha tecjti:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#48281a] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-tecjti-desc">Bebida tradicional elaborada con una mezcla de cereales y frutos secos, de sabor suave y cremoso, con delicadas notas a nuez. Su vínculo con las costumbres ancestrales la convierte en una opción ideal para compartir evocando la riqueza de la región.</span></p>
+                    </div>
+
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-tecjti">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-quinoa">- Chicha de quinoa:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#e6ddc5] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-quinoa-desc">Bebida de antaño de la Quebrada que hoy vuelve a nuestra mesa, donde la quinoa aporta su cremosidad y se expresa con delicadas notas especiadas.</span></p>
+                    </div>
+
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-quinoa">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-kulli">- Chicha kulli:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#5f2e82] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-kulli-desc">Su color morado intenso nos recuerda la nobleza del maíz Kulli (maíz Morado) esta chicha tiene notas frutales y dulce.</span></p>
+                    </div>
+
+                    <div class="bg-[#99795a] text-white p-6 rounded-xl border border-white/10 shadow-sm" id="chicha-kulli">
+                        <div class="flex justify-between items-center mb-3">
+                            <h3 class="font-oswald text-2xl uppercase"><span data-i18n="chicha-airampo">- Chicha de airampo:</span></h3>
+                            <div class="w-20 h-4 rounded-full bg-[#c876a6] border border-white/20"></div>
+                        </div>
+                        <p class="font-light leading-relaxed"><span data-i18n="chicha-airampo-desc">Elaborada con las semillas de airampo. Nos regala un color rosa y sabor sutil a frutas cítricas y notas florales. Un imperdible de la Genoveva.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MENÚ DE COMIDA (Fondo Beige General, 3 Columnas) -->
+        <section class="max-w-[90rem] mx-auto px-6 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-16">
+                
+                <!-- COLUMNA 1: Entradas y Empanadas -->
+                <div class="space-y-16">
+                    <!-- Entradas -->
+                    <div class="relative reveal">
+                        <img src="ILUSTRACIONES/%234B2C2C/_tamales.png" class="absolute -left-6 top-10 w-24 opacity-30 md:w-32 -rotate-12 pointer-events-none" loading="lazy" alt="Tamales">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-entradas text-white font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="entradas-title">Entradas</span></h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="ramillete">- Ramillete de tamalitos:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$15.000</span><a href="#chicha-mani" onclick="scrollToChicha(event, \'chicha-mani\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#d2ae82] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="ramillete-desc">Entrada con tres tipos distintos de tamales (tamal de charqui en masa de mote especiado, tamal morado de quinua y quesos y tamal de cerdo en masa de maíz y zapallo).</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="tabla">- Tabla de degustación de entradas andinas (para dos personas):</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$26.000</span><a href="#chicha-tecjti" onclick="scrollToChicha(event, \'chicha-tecjti\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#48281a] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="tabla-desc">Mote con charqui asado, escabeche de llama, oca confitada y papa salteada, tomates asados, llajwa y tamal.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Empanadas -->
+                    <div class="relative reveal mt-12">
+                        <img src="ILUSTRACIONES/%23916D97/_empanadas.png" class="absolute -right-6 top-10 w-24 opacity-30 md:w-32 rotate-12 pointer-events-none" loading="lazy" alt="Empanadas">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-empanadas text-white font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="empanadas-title">Empanadas</span></h2>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-lg md:text-xl uppercase pr-4"><span data-i18n="emp-carne">- Carne cortada a cuchillo en masa de pimentón:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$3.000</span><a href="#chicha-maiz" onclick="scrollToChicha(event, \'chicha-maiz\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#a64d26] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base"><span data-i18n="emp-carne-desc">Con sabor norteño y la mejor carne de res.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-lg md:text-xl uppercase pr-4"><span data-i18n="emp-pollo">- Empanada de pollo en masa común:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$3.000</span><a href="#chicha-maiz" onclick="scrollToChicha(event, \'chicha-maiz\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#a64d26] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base"><span data-i18n="emp-pollo-desc">Pollo cortado a cuchillo salteado con cebolla y un toque de papa andina.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-lg md:text-xl uppercase pr-4"><span data-i18n="emp-cordero">- Empanada de cordero de la puna en masa de curry:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$3.500</span><a href="#chicha-tecjti" onclick="scrollToChicha(event, \'chicha-tecjti\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#48281a] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base"><span data-i18n="emp-cordero-desc">Este bocado reúne el sabor tierno del cordero criado en las alturas de la puna, envuelto en una masa delicadamente aromatizada con curry.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-lg md:text-xl uppercase pr-4"><span data-i18n="emp-quinua">- Empanada de quinua en masa de maíz morado:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$3.000</span><a href="#chicha-kulli" onclick="scrollToChicha(event, \'chicha-kulli\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#5f2e82] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base"><span data-i18n="emp-quinua-desc">Quinua graneada con queso en masa de maíz kulli, imperdible sabor andino.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 2: Principales, Carnes, Guarniciones -->
+                <div class="space-y-16">
+                    <!-- Principales -->
+                    <div class="relative reveal mt-12 md:mt-0">
+                        <img src="ILUSTRACIONES/%234B2C2C/_principales.png" class="absolute -right-6 top-6 w-24 opacity-30 md:w-32 rotate-6 pointer-events-none" loading="lazy" alt="Principales">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-principales text-white font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="principales-title">Principales</span></h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="medallon-humita">- Medallón de humita asada con pesto rústico y mix de hojas verdes:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$18.000</span><a href="#chicha-quinoa" onclick="scrollToChicha(event, \'chicha-quinoa\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#e6ddc5] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="medallon-humita-desc">Una propuesta que fusiona la suavidad y dulzura de la humita tradicional en formato de medallón, acompañada por un pesto rústico que realza los sabores con notas frescas y herbáceas, y un mix de hojas verdes que aporta frescura y contraste, logrando un plato equilibrado y lleno de matices andinos.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="yuspichi">- Yuspichi:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$20.000</span><a href="#chicha-tecjti" onclick="scrollToChicha(event, \'chicha-tecjti\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#48281a] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="yuspichi-desc">Plato tradicional elaborado a partir de trigo pelado con ceniza, acompañado por una salsa de pimiento y carne roja. Se consume de manera comunitaria durante las mingas agrarias, en el mes de Agosto.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nuestras Carnes -->
+                    <div class="relative reveal mt-12">
+                        <img src="ILUSTRACIONES/%23916D97/_carne.png" class="absolute -left-6 top-10 w-24 opacity-30 md:w-32 -rotate-12 pointer-events-none" loading="lazy" alt="Carnes">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-carnes text-white font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="carnes-title">Nuestras Carnes</span></h2>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="cordero">- Cordero huateado a "La Genoveva":</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$35.000</span><a href="#chicha-kulli" onclick="scrollToChicha(event, \'chicha-kulli\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#5f2e82] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="cordero-desc">Preparado en barro con técnica prehispánica de nuestra América profunda, acompañado con salsa cítrica de chicha.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="asado">- Asado banderita:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$30.000</span><a href="#chicha-tecjti" onclick="scrollToChicha(event, \'chicha-tecjti\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#48281a] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="asado-desc">Corte típico argentino de carne vacuna, ideal para recordar los encuentros en familia o con amigos.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-end border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="milanesa">- Milanesa de res:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap">$25.000</span><a href="#chicha-maiz" onclick="scrollToChicha(event, \'chicha-maiz\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#a64d26] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="milanesa-desc">Clásico corte de carne vacuna empanada y frita, crujiente por fuera y tierna por dentro, ideal para acompañar con guarniciones tradicionales del norte.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="llama">- Llama escabechada:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$20.000</span><a href="#chicha-mani" onclick="scrollToChicha(event, \'chicha-mani\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#d2ae82] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="llama-desc">Esta preparación combina la nobleza de la carne de llama y vegetales de la quebrada reflejando la diversidad de la materia prima de Jujuy y uso culinario.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Guarniciones -->
+                    <div class="text-center pt-8 relative reveal mt-12">
+                        <img src="ILUSTRACIONES/%23C5A074/_guarnición.png" class="absolute right-0 top-10 w-20 opacity-30 md:w-28 rotate-12 pointer-events-none" loading="lazy" alt="Guarniciones">
+                        <h2 class="bg-pill-bebidas text-genoveva-dark font-oswald text-xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm mb-6 relative z-10"><span data-i18n="guarniciones-title">Guarniciones</span></h2>
+                        <p class="font-light text-genoveva-dark/90 leading-relaxed text-sm md:text-base border-t border-b border-genoveva-dark/20 py-4">
+                            <span data-i18n="guarniciones-desc">Puré de batatas asadas con fruto seco y miel | Mix de hojas verde | Papas andinas salteadas <br>
+                            Papas fritas | Mote salteado | Pisara quinoa</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- COLUMNA 3: Ensaladas, Sopas, Postres -->
+                <div class="space-y-16">
+                    <!-- Ensaladas -->
+                    <div class="relative reveal mt-12 md:mt-0">
+                        <img src="ILUSTRACIONES/%234B2C2C/_ensalada.png" class="absolute -left-6 top-8 w-24 opacity-30 md:w-32 -rotate-6 pointer-events-none" loading="lazy" alt="Ensaladas">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-ensaladas text-white font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="ensaladas-title">Ensaladas</span></h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="ens-genoveva">- Ensalada "La Genoveva":</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$22.000</span><a href="#chicha-airampo" onclick="scrollToChicha(event, \'chicha-airampo\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#c876a6] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="ens-genoveva-desc">Hojas verdes, quinua, tomates asados, ocas confitadas, queso de cabra, queso roquefort y frutos secos tostados.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="ens-solterito">- Solterito invernal:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$22.000</span><a href="#chicha-maiz" onclick="scrollToChicha(event, \'chicha-maiz\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#a64d26] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="ens-solterito-desc">Papas salteadas a las hierbas quebradeñas con queso de cabra, tomates asados, choclos frescos y cebolla morada. Acompaña un aliño de aceite de oliva, limón y tomillo.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sopas -->
+                    <div class="relative reveal mt-12">
+                        <img src="ILUSTRACIONES/%23DAC8B2/_sopa.png" class="absolute -right-6 top-10 w-24 opacity-30 md:w-32 rotate-12 pointer-events-none" loading="lazy" alt="Sopas">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-sopas text-genoveva-dark font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="sopas-title">Sopas</span></h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="sopa-majada">- Sopa majada:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$15.000</span><a href="#chicha-airampo" onclick="scrollToChicha(event, \'chicha-airampo\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#c876a6] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="sopa-majada-desc">Cocina prehispánica de nuestra región, en la cual se une la carne con la harina de maíz con métodos ancestrales.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="sopa-verdura">- Sopa crema de verdura:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$15.000</span><a href="#chicha-tecjti" onclick="scrollToChicha(event, \'chicha-tecjti\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#48281a] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="sopa-verdura-desc">Un plato reconfortante que combina una variedad de hortalizas frescas de nuestra quebrada.</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Postres -->
+                    <div class="relative reveal mt-12">
+                        <img src="ILUSTRACIONES/%23C5A074/_postre.png" class="absolute -left-6 top-10 w-24 opacity-30 md:w-32 -rotate-12 pointer-events-none" loading="lazy" alt="Postres">
+                        <div class="text-center mb-8 relative z-10">
+                            <h2 class="bg-pill-postres text-genoveva-dark font-oswald text-2xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm"><span data-i18n="postres-title">Postres</span></h2>
+                        </div>
+                        <div class="space-y-8">
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="vigilante">- Vigilante andino:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$12.000</span><a href="#chicha-quinoa" onclick="scrollToChicha(event, \'chicha-quinoa\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#e6ddc5] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="vigilante-desc">Armonía perfecta del queso de cabra con confitura de cayote y hierbas quebradeñas.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="helado">- Helado de chocolate blanco con frutos rojos:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$12.000</span><a href="#chicha-kulli" onclick="scrollToChicha(event, \'chicha-kulli\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#5f2e82] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="helado-desc">Una combinación pensada para disfrutar cada sabor de manera distinguida y apreciar su calidad en cada degustación.</span></p>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between items-start border-b border-genoveva-dark/20 pb-1 mb-2">
+                                    <h3 class="font-oswald text-xl uppercase pr-4"><span data-i18n="anchi">- Crema de anchi:</span></h3>
+                                    <div class="flex flex-col items-end"><span class="font-oswald text-xl font-medium whitespace-nowrap mt-1">$8.000</span><a href="#chicha-airampo" onclick="scrollToChicha(event, \'chicha-airampo\')" class="w-12 h-1.5 mt-1 rounded-full bg-[#c876a6] hover:opacity-80 transition cursor-pointer" title="Ver maridaje sugerido"></a></div>
+                                </div>
+                                <p class="font-light text-genoveva-dark/80 text-sm md:text-base leading-relaxed"><span data-i18n="anchi-desc">Este postre elaborado con maíz evoca los sabores de la infancia y tiene su origen en la preparación tradicional de la chicha.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BEBIDAS (Extraídas del archivo Externo 2) -->
+        <section class="border-t border-genoveva-dark/20 py-16 px-6 mt-10 relative overflow-hidden">
+            <!-- Ilustración Cerros de Fondo -->
+            <img src="ILUSTRACIONES/%23916D97/_cerros%20largo.png" class="absolute bottom-0 left-0 w-full h-auto object-cover object-bottom opacity-50 pointer-events-none z-0" alt="Cerros Morados" />
+            
+            <div class="max-w-7xl mx-auto relative z-10">
+                
+                <!-- VINOS -->
+                <div class="text-center mb-16 relative reveal">
+                    <img src="ILUSTRACIONES/%23916D97/_vino.png" class="absolute left-1/3 top-24 w-12 opacity-80 md:w-16 pointer-events-none hidden md:block" loading="lazy" alt="Vinos">
+                    <h2 class="bg-pill-vinos text-white font-oswald text-3xl uppercase tracking-widest px-12 py-3 rounded-full inline-block shadow-sm mb-12 relative z-10"><span data-i18n="vinos-title">Vinos</span></h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-sm md:text-base font-light text-left">
+                        
+                        <!-- Jujuy -->
+                        <div class="bg-genoveva-dark/5 p-6 rounded-xl">
+                            <h4 class="font-oswald text-2xl uppercase font-medium text-center mb-2">Jujuy</h4>
+                            <p class="text-center mb-6 opacity-90 leading-tight"><span data-i18n="vinos-jujuy-desc">Quebrada de Humahuaca<br>Carácter andino, mineralidad y<br>expresión extrema.</span></p>
+                            
+                            <p class="text-center font-oswald tracking-widest mb-4">VINOS DE ALTURA</p>
+                            
+                            <ul class="space-y-4">
+                                <li>
+                                    <span class="font-medium">- Bodega viñas del perchel</span><br>
+                                    Runa Malbec 750 ml $60.000<br>
+                                    Cactus Tannat 750 ml $60.000<br>
+                                    Cactus Syrah 750 ml $60.000<br>
+                                    Cactus Malbec 750 ml $60.000
+                                </li>
+                                <li>
+                                    <span class="font-medium">- Bodega La Selestina</span><br>
+                                    Molle Grande Malbec 750 ml $45.000
+                                </li>
+                                <li>
+                                    <span class="font-medium">- Bodega Amanecer Andino</span><br>
+                                    Amanecer Andino Malbec Reserva 750 ml $45.000<br>
+                                    Amanecer Andino Orange Wine 750 ml $45.000
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Salta -->
+                        <div class="bg-genoveva-dark/5 p-6 rounded-xl">
+                            <h4 class="font-oswald text-2xl uppercase font-medium text-center mb-2">Salta</h4>
+                            <p class="text-center mb-6 opacity-90 leading-tight"><span data-i18n="vinos-salta-desc">Valles Calchaquíes<br>Aromas intensos, potencia<br>y tradición norteña.</span></p>
+                            
+                            <ul class="space-y-4 mb-6">
+                                <li>
+                                    <span class="font-medium">- Bodega Etchart</span><br>
+                                    Cafayate Malbec 750 ml $15.000<br>
+                                    Cafayate Torrontés 750 ml $15.000<br>
+                                    Cafayate Torrontés Dulce 750 ml $20.000
+                                </li>
+                                <li>
+                                    <span class="font-medium">- Bodega El Esteco</span><br>
+                                    Don David Cabernet Sauvignon 750 ml $16.000
+                                </li>
+                                <li>
+                                    <span class="font-medium">- Bodega Colomé</span><br>
+                                    Amalaya Malbec 750 ml $17.000
+                                </li>
+                                <li>
+                                    <span class="font-medium">- Bodega Domingo Hermano</span><br>
+                                    Domingo Hermano Malbec 750 ml $11.000
+                                </li>
+                            </ul>
+
+                            <p class="text-center font-oswald tracking-widest mb-4">VINOS DE ALTURA</p>
+
+                            <ul class="space-y-2">
+                                <li>
+                                    <span class="font-medium">- Bodega Puna</span><br>
+                                    Puna Torrontés 750 ml $18.000<br>
+                                    Puma Malbec 750 ml $18.000<br>
+                                    Puma Malbec 375 ml $10.000
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Mendoza -->
+                        <div class="bg-genoveva-dark/5 p-6 rounded-xl">
+                            <h4 class="font-oswald text-2xl uppercase font-medium text-center mb-2">Mendoza</h4>
+                            <p class="text-center mb-6 opacity-90 leading-tight"><span data-i18n="vinos-mendoza-desc">Valle de Uco<br>Elegancia, técnica y diversidad.</span></p>
+                            
+                            <ul class="space-y-4 mb-6">
+                                <li>
+                                    <span class="font-medium">- Bodega Rutini</span><br>
+                                    Rutini Malbec 750 ml $55.000<br>
+                                    Rutini Cabernet Sauvignon 750 ml $55.000<br>
+                                    Rutini Cabernet-Syrah 750 ml $35.000<br>
+                                    Trumpeter Pinot Noir 750 ml $25.000<br>
+                                    Trumpeter Cabernet Sauvignon 750 ml $25.000
+                                </li>
+                            </ul>
+
+                            <p class="text-center font-oswald tracking-widest mb-4">Maipú</p>
+
+                            <ul class="space-y-2">
+                                <li>
+                                    <span class="font-medium">- Bodega López</span><br>
+                                    López Malbec 750 ml $12.000<br>
+                                    López Malbec 375 ml $8.000
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- OTRAS BEBIDAS (Cervezas, Jugos, Aguas) -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center mt-16 pt-12 relative z-10">
+                    
+                    <!-- Cervezas -->
+                    <div class="relative reveal">
+                        <h2 class="bg-pill-bebidas text-genoveva-dark font-oswald text-xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm mb-6 relative z-10"><span data-i18n="cervezas-title">Cervezas</span></h2>
+                        <p class="font-oswald tracking-widest mb-4"><span data-i18n="artesanales">ARTESANALES</span></p>
+                        <ul class="space-y-4 font-light text-sm mb-6">
+                            <li><strong>Cerveza Tilcara</strong><br>Golden 500 c.c. $9.000<br>Yacoraite 500 c.c. $9.000<br>Stout 500 c.c. $9.000</li>
+                            <li><strong>Cerveza Kyron</strong><br>Rubia 350 c.c. $7.000<br>Negra 350 c.c. $7.000</li>
+                        </ul>
+                        <p class="font-oswald tracking-widest mb-4"><span data-i18n="otras">OTRAS</span></p>
+                        <ul class="space-y-2 font-light text-sm">
+                            <li>Heineken 1l $12.000</li>
+                            <li>Norte rubia 1l $10.000</li>
+                            <li>Salta rubia o negra 1l $10.000</li>
+                        </ul>
+                    </div>
+
+                    <!-- Jugos -->
+                    <div class="relative reveal mt-12 md:mt-0">
+                        <img src="ILUSTRACIONES/%23C5A074/_jugos.png" class="absolute -right-4 -top-8 w-16 opacity-30 md:w-24 rotate-12 pointer-events-none" loading="lazy" alt="Jugos">
+                        <h2 class="bg-pill-bebidas text-genoveva-dark font-oswald text-xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm mb-6 relative z-10"><span data-i18n="jugos-title">Jugos Naturales</span></h2>
+                        <ul class="space-y-6 font-light text-sm text-center">
+                            <li>
+                                <strong><span data-i18n="ulpada">- Ulpada:</span></strong><br><span data-i18n="ulpada-desc">Jugo de pastores a base de maíz cocido.</span><br>$8.000
+                            </li>
+                            <li>
+                                <strong><span data-i18n="jugo-hierbas">- Jugo de hierbas quebradeñas:</span></strong><br><span data-i18n="jugo-hierbas-desc">Hierbas de estación (cedrón, arca, muña, burro) acompañado de una base cítrica.</span><br>$8.000
+                            </li>
+                            <li>
+                                <strong><span data-i18n="limonada">- Limonada:</span></strong><br><span data-i18n="limonada-desc">De frutos rojos o jengibre y menta.</span><br>1l $8.000<br>500 ml $5.000
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Aguas y Gaseosas -->
+                    <div class="relative reveal mt-12 md:mt-0">
+                        <img src="ILUSTRACIONES/%23C5A074/_gaseosa.png" class="absolute -left-4 -top-8 w-16 opacity-30 md:w-24 -rotate-12 pointer-events-none" loading="lazy" alt="Gaseosas">
+                        <h2 class="bg-pill-bebidas text-genoveva-dark font-oswald text-xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm mb-6 leading-tight relative z-10"><span data-i18n="aguas-title">Aguas<br>y Gaseosas</span></h2>
+                        
+                        <div class="mb-8">
+                            <p class="font-medium mb-1"><span data-i18n="aguas">- Aguas</span></p>
+                            <p class="font-light text-sm"><span data-i18n="aguas-desc">Sin gas | Con gas | Saborizadas</span></p>
+                            <p class="font-oswald text-lg mt-1">$4.000</p>
+                        </div>
+
+                        <div>
+                            <p class="font-medium mb-1"><span data-i18n="gaseosas">- Gaseosas</span></p>
+                            <p class="font-light text-sm">Coca Cola | Sprite | Fanta</p>
+                            <p class="font-oswald text-lg mt-1">$4.000</p>
+                        </div>
+                    </div>
+
+                <!-- Footer Social -->
+                <div class="text-center mt-24 pb-6 relative z-10">
+                    <a href="https://instagram.com/chicherialagenoveva" target="_blank" class="inline-flex items-center gap-2 bg-genoveva-dark/10 hover:bg-genoveva-dark/20 transition px-6 py-2 rounded-full font-outfit text-sm font-medium">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                        </svg>
+                        @chicherialagenoveva
+                    </a>
+                </div>
+            </div>
+</div>
+
+                
+        </section>
+
+    </main>
+
+    <!-- Botón Flotante para recargar/volver a cerrar la carta -->
+    <button onclick="cerrarCarta()" id="btn-cerrar" class="fixed bottom-6 right-6 bg-genoveva-dark text-white rounded-full w-12 h-12 flex items-center justify-center shadow-lg transform scale-0 transition-transform duration-500 z-50 hover:bg-genoveva-gold pointer-events-auto">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
+    <script>
+        const doorLeft = document.getElementById('door-left');
+        const doorRight = document.getElementById('door-right');
+        const btnCerrar = document.getElementById('btn-cerrar');
+        const scrollSpacer = document.getElementById('scroll-spacer');
+        
+        let triggerHeight = 0;
+
+        function updateMeasurements() {
+            triggerHeight = scrollSpacer.offsetHeight;
+        }
+
+        window.addEventListener('resize', updateMeasurements);
+        
+        window.addEventListener('scroll', () => {
+            if (!triggerHeight) updateMeasurements();
+            
+            const scrollY = window.scrollY;
+            
+            // Calculamos el progreso de 0 a 1 basado en el espaciador inicial
+            let progress = scrollY / triggerHeight;
+            if (progress > 1) progress = 1;
+            if (progress < 0) progress = 0;
+            
+            // Rotación de las puertas (hasta 120 grados)
+            const angle = progress * 120;
+            
+            doorLeft.style.transform = `rotateY(${-angle}deg)`;
+            doorRight.style.transform = `rotateY(${angle}deg)`;
+            
+            // Mostrar botón flotante solo cuando la carta está abierta
+            if (progress > 0.8) {
+                btnCerrar.classList.remove('scale-0');
+            } else {
+                btnCerrar.classList.add('scale-0');
+            }
+        });
+
+        // Al inicio forzamos el cálculo
+        updateMeasurements();
+
+        
+        function scrollToChicha(e, chichaId) {
+            e.preventDefault();
+            const target = document.getElementById(chichaId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                target.classList.add('animate-pulse-highlight');
+                setTimeout(() => target.classList.remove('animate-pulse-highlight'), 2000);
+            }
+        }
+
+        function abrirCarta() {
+            window.scrollTo({ top: triggerHeight + 10, behavior: 'smooth' });
+        }
+
+        function cerrarCarta() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+
+    <!-- Selector de Idioma Flotante -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button id="lang-btn" class="bg-white/40 backdrop-blur-md border border-white/50 text-genoveva-dark shadow-lg rounded-full w-12 h-12 flex items-center justify-center font-oswald text-lg transition hover:bg-white/60">
+            ES
+        </button>
+        <div id="lang-menu" class="absolute bottom-14 left-0 bg-white/90 backdrop-blur-md border border-white/50 rounded-xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4 min-w-[120px]">
+            <button onclick="changeLanguage('es')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left tracking-wide">ESPAÑOL</button>
+            <button onclick="changeLanguage('en')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">ENGLISH</button>
+            <button onclick="changeLanguage('de')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">DEUTSCH</button>
+            <button onclick="changeLanguage('fr')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">FRANÇAIS</button>
+        </div>
+    </div>
+
+    <!-- Script de Internacionalización (i18n) -->
+    <style>
+        .lang-transitioning {
+            opacity: 0;
+            filter: blur(4px);
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+        [data-i18n] {
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+    
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+        }
+        
+        @keyframes pulse-highlight {
+            0%, 100% { background-color: #99795a; transform: scale(1); box-shadow: none; }
+            50% { background-color: #a88a6c; transform: scale(1.02); box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); border-color: rgba(255,255,255,0.5); }
+        }
+        .animate-pulse-highlight {
+            animation: pulse-highlight 2s ease-in-out;
+        }
+    </style>
+    <script>
+        const i18n = {
+            es: {
+                "cover-subtitle": "Chichería con Historia",
+                "cover-btn": "Desliza o toca aquí",
+                "historia-title": "Nuestra Historia",
+                "historia-p1": "Esta carta lleva consigo la historia, la cultura y el amor por nuestro pueblo. En cada preparación evocamos a quienes amamos. Te invitamos a descubrir, a través de nuestros sabores, el legado de nuestras familias, quienes trabajaron y cuidaron la tierra, pero sobre todo preservaron preparaciones milenarias.",
+                "historia-p2": "La Genoveva, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.",
+                "historia-p3": "Esta carta está dedicada a las mujeres que han conservado las cocinas y sus técnicas ancestrales, y a quienes cultivan la tierra con respeto y dedicación en estos tiempos.",
+                "chichas-title": "Chichas de la Genoveva",
+                "botella-chica": "Botella chica:",
+                "jarra-media": "Jarra ½ l:",
+                "jarra-1l": "Jarra 1l:",
+                "maridaje": "Maridaje recomendado: señalado por línea de color",
+                "chicha-maiz": "- Chicha de maíz:",
+                "chicha-maiz-desc": "Bebida ancestral prehispánica y emblema cultural de nuestra tierra, presente en nuestras celebraciones. Sabor intenso y su acidez en boca evocan notas a pan y un sutil dejo cítrico. Es un símbolo de identidad, encuentro y memoria de nuestros pueblos.",
+                "chicha-mani": "- Chicha de maní:",
+                "chicha-mani-desc": "Combina delicadas notas de café con un dulce sutil y un toque terroso, evocando tradiciones y momentos compartidos en torno a las celebraciones de nuestra cultura.",
+                "chicha-tecjti": "- Chicha tecjti:",
+                "chicha-tecjti-desc": "Bebida tradicional elaborada con una mezcla de cereales y frutos secos, de sabor suave y cremoso, con delicadas notas a nuez. Su vínculo con las costumbres ancestrales la convierte en una opción ideal para compartir evocando la riqueza de la región.",
+                "chicha-quinoa": "- Chicha de quinoa:",
+                "chicha-quinoa-desc": "Bebida de antaño de la Quebrada que hoy vuelve a nuestra mesa, donde la quinoa aporta su cremosidad y se expresa con delicadas notas especiadas.",
+                "chicha-kulli": "- Chicha kulli:",
+                "chicha-kulli-desc": "Su color morado intenso nos recuerda la nobleza del maíz Kulli (maíz Morado) esta chicha tiene notas frutales y dulce.",
+                "chicha-airampo": "- Chicha de airampo:",
+                "chicha-airampo-desc": "Elaborada con las semillas de airampo. Nos regala un color rosa y sabor sutil a frutas cítricas y notas florales. Un imperdible de la Genoveva.",
+                "entradas-title": "Entradas",
+                "ramillete": "- Ramillete de tamalitos:",
+                "ramillete-desc": "Entrada con tres tipos distintos de tamales (tamal de charqui en masa de mote especiado, tamal morado de quinua y quesos y tamal de cerdo en masa de maíz y zapallo).",
+                "tabla": "- Tabla de degustación de entradas andinas (para dos personas):",
+                "tabla-desc": "Mote con charqui asado, escabeche de llama, oca confitada y papa salteada, tomates asados, llajwa y tamal.",
+                "empanadas-title": "Empanadas",
+                "emp-carne": "- Carne cortada a cuchillo en masa de pimentón:",
+                "emp-carne-desc": "Con sabor norteño y la mejor carne de res.",
+                "emp-pollo": "- Empanada de pollo en masa común:",
+                "emp-pollo-desc": "Pollo cortado a cuchillo salteado con cebolla y un toque de papa andina.",
+                "emp-cordero": "- Empanada de cordero de la puna en masa de curry:",
+                "emp-cordero-desc": "Este bocado reúne el sabor tierno del cordero criado en las alturas de la puna, envuelto en una masa delicadamente aromatizada con curry.",
+                "emp-quinua": "- Empanada de quinua en masa de maíz morado:",
+                "emp-quinua-desc": "Quinua graneada con queso en masa de maíz kulli, imperdible sabor andino.",
+                "principales-title": "Principales",
+                "medallon-humita": "- Medallón de humita asada con pesto rústico y mix de hojas verdes:",
+                "medallon-humita-desc": "Una propuesta que fusiona la suavidad y dulzura de la humita tradicional en formato de medallón, acompañada por un pesto rústico que realza los sabores con notas frescas y herbáceas, y un mix de hojas verdes que aporta frescura y contraste, logrando un plato equilibrado y lleno de matices andinos.",
+                "yuspichi": "- Yuspichi:",
+                "yuspichi-desc": "Plato tradicional elaborado a partir de trigo pelado con ceniza, acompañado por una salsa de pimiento y carne roja. Se consume de manera comunitaria durante las mingas agrarias, en el mes de Agosto.",
+                "carnes-title": "Nuestras Carnes",
+                "cordero": "- Cordero huateado a \"La Genoveva\":",
+                "cordero-desc": "Preparado en barro con técnica prehispánica de nuestra América profunda, acompañado con salsa cítrica de chicha.",
+                "asado": "- Asado banderita:",
+                "asado-desc": "Corte típico argentino de carne vacuna, ideal para recordar los encuentros en familia o con amigos.",
+                "milanesa": "- Milanesa de res:",
+                "milanesa-desc": "Clásico corte de carne vacuna empanada y frita, crujiente por fuera y tierna por dentro, ideal para acompañar con guarniciones tradicionales del norte.",
+                "llama": "- Llama escabechada:",
+                "llama-desc": "Esta preparación combina la nobleza de la carne de llama y vegetales de la quebrada reflejando la diversidad de la materia prima de Jujuy y uso culinario.",
+                "guarniciones-title": "Guarniciones",
+                "guarniciones-desc": "Puré de batatas asadas con fruto seco y miel | Mix de hojas verde | Papas andinas salteadas <br>\n                            Papas fritas | Mote salteado | Pisara quinoa",
+                "ensaladas-title": "Ensaladas",
+                "ens-genoveva": "- Ensalada \"La Genoveva\":",
+                "ens-genoveva-desc": "Hojas verdes, quinua, tomates asados, ocas confitadas, queso de cabra, queso roquefort y frutos secos tostados.",
+                "ens-solterito": "- Solterito invernal:",
+                "ens-solterito-desc": "Papas salteadas a las hierbas quebradeñas con queso de cabra, tomates asados, choclos frescos y cebolla morada. Acompaña un aliño de aceite de oliva, limón y tomillo.",
+                "sopas-title": "Sopas",
+                "sopa-majada": "- Sopa majada:",
+                "sopa-majada-desc": "Cocina prehispánica de nuestra región, en la cual se une la carne con la harina de maíz con métodos ancestrales.",
+                "sopa-verdura": "- Sopa crema de verdura:",
+                "sopa-verdura-desc": "Un plato reconfortante que combina una variedad de hortalizas frescas de nuestra quebrada.",
+                "postres-title": "Postres",
+                "vigilante": "- Vigilante andino:",
+                "vigilante-desc": "Armonía perfecta del queso de cabra con confitura de cayote y hierbas quebradeñas.",
+                "helado": "- Helado de chocolate blanco con frutos rojos:",
+                "helado-desc": "Una combinación pensada para disfrutar cada sabor de manera distinguida y apreciar su calidad en cada degustación.",
+                "anchi": "- Crema de anchi:",
+                "anchi-desc": "Este postre elaborado con maíz evoca los sabores de la infancia y tiene su origen en la preparación tradicional de la chicha.",
+                "vinos-title": "Vinos",
+                "vinos-jujuy-desc": "Quebrada de Humahuaca<br>Carácter andino, mineralidad y<br>expresión extrema.",
+                "vinos-salta-desc": "Valles Calchaquíes<br>Aromas intensos, potencia<br>y tradición norteña.",
+                "vinos-mendoza-desc": "Valle de Uco<br>Elegancia, técnica y diversidad.",
+                "cervezas-title": "Cervezas",
+                "artesanales": "ARTESANALES",
+                "otras": "OTRAS",
+                "jugos-title": "Jugos Naturales",
+                "ulpada": "- Ulpada:",
+                "ulpada-desc": "Jugo de pastores a base de maíz cocido.",
+                "jugo-hierbas": "- Jugo de hierbas quebradeñas:",
+                "jugo-hierbas-desc": "Hierbas de estación (cedrón, arca, muña, burro) acompañado de una base cítrica.",
+                "limonada": "- Limonada:",
+                "limonada-desc": "De frutos rojos o jengibre y menta.",
+                "aguas-title": "Aguas<br>y Gaseosas",
+                "aguas": "- Aguas",
+                "aguas-desc": "Sin gas | Con gas | Saborizadas",
+                "gaseosas": "- Gaseosas"
+            },
+            en: {
+                "cover-subtitle": "Chichería with History",
+                "cover-btn": "Swipe or tap here",
+                "historia-title": "Our History",
+                "historia-p1": "This menu carries the history, culture, and love for our town. In each preparation, we evoke those we love. We invite you to discover, through our flavors, the legacy of our families, who worked and cared for the land, preserving millenary recipes.",
+                "historia-p2": "La Genoveva, my maternal grandmother, worked from a young age in one of the chicherías in Tilcara. There, surrounded by arropes and chuyas, she found love with a farmer. Her life unfolded amidst the aroma of burning firewood, generous tables full of shared joy, and the prosperity granted by our Pachamama. She left us the love for our roots as a legacy.",
+                "historia-p3": "This menu is dedicated to the women who have preserved the kitchens and their ancestral techniques, and to those who cultivate the land with respect and dedication today.",
+                "chichas-title": "Genoveva's Chichas",
+                "botella-chica": "Small bottle:",
+                "jarra-media": "½ L Pitcher:",
+                "jarra-1l": "1 L Pitcher:",
+                "maridaje": "Recommended pairing: indicated by color line",
+                "chicha-maiz": "- Corn Chicha:",
+                "chicha-maiz-desc": "Pre-Hispanic ancestral beverage and cultural emblem of our land, present in our celebrations. Its intense flavor and acidity on the palate evoke notes of bread and a subtle citrus touch. It is a symbol of identity, meeting, and memory of our peoples.",
+                "chicha-mani": "- Peanut Chicha:",
+                "chicha-mani-desc": "Combines delicate notes of coffee with a subtle sweetness and an earthy touch, evoking traditions and shared moments around our culture's celebrations.",
+                "chicha-tecjti": "- Tecjti Chicha:",
+                "chicha-tecjti-desc": "Traditional beverage made with a blend of cereals and nuts, smooth and creamy in flavor, with delicate nutty notes. Its bond with ancestral customs makes it an ideal choice to share, evoking the region's richness.",
+                "chicha-quinoa": "- Quinoa Chicha:",
+                "chicha-quinoa-desc": "Beverage of yesteryear from the Quebrada that returns to our table today, where quinoa brings its creaminess and expresses itself with delicate spiced notes.",
+                "chicha-kulli": "- Kulli Chicha:",
+                "chicha-kulli-desc": "Its intense purple color reminds us of the nobility of Kulli corn (purple corn). This chicha has fruity and sweet notes.",
+                "chicha-airampo": "- Airampo Chicha:",
+                "chicha-airampo-desc": "Made with airampo seeds. It gifts us a pink color and a subtle flavor of citrus fruits and floral notes. A must-try at La Genoveva.",
+                "entradas-title": "Appetizers",
+                "ramillete": "- Tamale Bouquet:",
+                "ramillete-desc": "Appetizer with three different types of tamales (charqui tamale in spiced mote dough, purple quinoa and cheese tamale, and pork tamale in corn and pumpkin dough).",
+                "tabla": "- Andean Appetizer Tasting Board (for two):",
+                "tabla-desc": "Mote with roasted charqui (jerky), llama escabeche (pickled), candied oca and sautéed potatoes, roasted tomatoes, llajwa (spicy sauce), and tamale.",
+                "empanadas-title": "Empanadas",
+                "emp-carne": "- Hand-cut Beef in Paprika Dough:",
+                "emp-carne-desc": "With northern flavor and the best beef.",
+                "emp-pollo": "- Chicken Empanada in Traditional Dough:",
+                "emp-pollo-desc": "Hand-cut chicken sautéed with onions and a touch of Andean potato.",
+                "emp-cordero": "- Puna Lamb Empanada in Curry Dough:",
+                "emp-cordero-desc": "This bite brings together the tender flavor of lamb raised in the high Puna, wrapped in a dough delicately flavored with curry.",
+                "emp-quinua": "- Quinoa Empanada in Purple Corn Dough:",
+                "emp-quinua-desc": "Grained quinoa with cheese in kulli corn dough, an unmissable Andean flavor.",
+                "principales-title": "Main Courses",
+                "medallon-humita": "- Roasted Humita Medallion with Rustic Pesto and Mixed Greens:",
+                "medallon-humita-desc": "A proposal that merges the smoothness and sweetness of traditional humita in a medallion format, accompanied by a rustic pesto that enhances flavors with fresh and herbaceous notes, and mixed greens providing freshness and contrast, achieving a balanced dish full of Andean nuances.",
+                "yuspichi": "- Yuspichi:",
+                "yuspichi-desc": "Traditional dish made from ash-peeled wheat, accompanied by a pepper and red meat sauce. Consumed communally during agricultural mingas in the month of August.",
+                "carnes-title": "Our Meats",
+                "cordero": "- \"La Genoveva\" Style Huateado Lamb:",
+                "cordero-desc": "Prepared in clay using pre-Hispanic techniques from our deep America, accompanied by a citrus chicha sauce.",
+                "asado": "- Asado Banderita (Short Ribs):",
+                "asado-desc": "Typical Argentine beef cut, ideal for remembering gatherings with family or friends.",
+                "milanesa": "- Beef Milanesa:",
+                "milanesa-desc": "Classic breaded and fried beef cut, crispy on the outside and tender on the inside, ideal to accompany with traditional northern side dishes.",
+                "llama": "- Pickled Llama (Escabeche):",
+                "llama-desc": "This preparation combines the nobility of llama meat and vegetables from the Quebrada, reflecting the diversity of Jujuy's raw materials and culinary use.",
+                "guarniciones-title": "Side Dishes",
+                "guarniciones-desc": "Roasted sweet potato purée with nuts and honey | Mixed greens | Sautéed Andean potatoes <br>\n                            French fries | Sautéed Mote | Quinoa Pisara",
+                "ensaladas-title": "Salads",
+                "ens-genoveva": "- \"La Genoveva\" Salad:",
+                "ens-genoveva-desc": "Mixed greens, quinoa, roasted tomatoes, candied ocas, goat cheese, blue cheese, and toasted nuts.",
+                "ens-solterito": "- Winter Solterito:",
+                "ens-solterito-desc": "Sautéed potatoes with Quebrada herbs, goat cheese, roasted tomatoes, fresh corn, and red onion. Accompanied by an olive oil, lemon, and thyme dressing.",
+                "sopas-title": "Soups",
+                "sopa-majada": "- Majada Soup:",
+                "sopa-majada-desc": "Pre-Hispanic cuisine from our region, where meat is joined with cornmeal using ancestral methods.",
+                "sopa-verdura": "- Vegetable Cream Soup:",
+                "sopa-verdura-desc": "A comforting dish combining a variety of fresh vegetables from our Quebrada.",
+                "postres-title": "Desserts",
+                "vigilante": "- Andean Vigilante:",
+                "vigilante-desc": "Perfect harmony of goat cheese with cayote preserve and Quebrada herbs.",
+                "helado": "- White Chocolate Ice Cream with Red Berries:",
+                "helado-desc": "A combination designed to enjoy each flavor in a distinguished way and appreciate its quality in every tasting.",
+                "anchi": "- Anchi Cream:",
+                "anchi-desc": "This dessert made with corn evokes the flavors of childhood and has its origins in the traditional preparation of chicha.",
+                "vinos-title": "Wines",
+                "vinos-jujuy-desc": "Quebrada de Humahuaca<br>Andean character, minerality, and<br>extreme expression.",
+                "vinos-salta-desc": "Calchaquí Valleys<br>Intense aromas, power,<br>and northern tradition.",
+                "vinos-mendoza-desc": "Uco Valley<br>Elegance, technique, and diversity.",
+                "cervezas-title": "Beers",
+                "artesanales": "CRAFT BEERS",
+                "otras": "OTHERS",
+                "jugos-title": "Natural Juices",
+                "ulpada": "- Ulpada:",
+                "ulpada-desc": "Herdsmen's juice based on cooked corn.",
+                "jugo-hierbas": "- Quebrada Herbs Juice:",
+                "jugo-hierbas-desc": "Seasonal herbs (lemon verbena, arca, muña, burro) accompanied by a citrus base.",
+                "limonada": "- Lemonade:",
+                "limonada-desc": "Red berries or ginger and mint.",
+                "aguas-title": "Water<br>& Sodas",
+                "aguas": "- Water",
+                "aguas-desc": "Still | Sparkling | Flavored",
+                "gaseosas": "- Sodas"
+            },
+            de: {
+                "cover-subtitle": "Chichería mit Geschichte",
+                "cover-btn": "Wischen oder hier tippen",
+                "historia-title": "Unsere Geschichte",
+                "historia-p1": "Diese Speisekarte trägt die Geschichte, Kultur und Liebe für unser Dorf in sich. In jeder Zubereitung erinnern wir an jene, die wir lieben. Wir laden Sie ein, durch unsere Aromen das Erbe unserer Familien zu entdecken, die das Land bearbeitet und gepflegt haben und jahrtausendealte Rezepte bewahrten.",
+                "historia-p2": "La Genoveva, meine Großmutter mütterlicherseits, arbeitete von klein auf in einer der Chicherías von Tilcara. Dort, umgeben von Arropes und Chuyas, fand sie die Liebe in einem Bauern. Ihr Leben entfaltete sich inmitten des Duftes von brennendem Brennholz, großzügigen Tischen voller geteilter Freude und dem Wohlstand, den unsere Pachamama schenkt. Sie hinterließ uns die Liebe zu unseren Wurzeln als Erbe.",
+                "historia-p3": "Diese Speisekarte ist den Frauen gewidmet, die die Küchen und ihre alten Techniken bewahrt haben, und denen, die heute das Land mit Respekt und Hingabe kultivieren.",
+                "chichas-title": "Genovevas Chichas",
+                "botella-chica": "Kleine Flasche:",
+                "jarra-media": "½ L Krug:",
+                "jarra-1l": "1 L Krug:",
+                "maridaje": "Empfohlene Weinbegleitung: durch farbige Linie gekennzeichnet",
+                "chicha-maiz": "- Mais-Chicha:",
+                "chicha-maiz-desc": "Prähispanisches altes Getränk und kulturelles Wahrzeichen unseres Landes, präsent auf unseren Festen. Sein intensiver Geschmack und seine Säure am Gaumen rufen Noten von Brot und einem subtilen Zitrus-Touch hervor. Es ist ein Symbol für Identität, Begegnung und Erinnerung unserer Völker.",
+                "chicha-mani": "- Erdnuss-Chicha:",
+                "chicha-mani-desc": "Kombiniert zarte Kaffeenoten mit einer dezenten Süße und einer erdigen Note und erinnert an Traditionen und gemeinsame Momente bei Feierlichkeiten unserer Kultur.",
+                "chicha-tecjti": "- Tecjti-Chicha:",
+                "chicha-tecjti-desc": "Traditionelles Getränk aus einer Mischung von Getreide und Nüssen, weich und cremig im Geschmack, mit zarten nussigen Noten. Seine Verbindung zu alten Bräuchen macht es zu einer idealen Wahl zum Teilen und erinnert an den Reichtum der Region.",
+                "chicha-quinoa": "- Quinoa-Chicha:",
+                "chicha-quinoa-desc": "Ein Getränk vergangener Zeiten aus der Quebrada, das heute wieder auf unseren Tisch kommt, wo die Quinoa ihre Cremigkeit einbringt und sich in zarten würzigen Noten ausdrückt.",
+                "chicha-kulli": "- Kulli-Chicha:",
+                "chicha-kulli-desc": "Seine tiefviolette Farbe erinnert an den Adel des Kulli-Mais (lila Mais). Diese Chicha hat fruchtige und süße Noten.",
+                "chicha-airampo": "- Airampo-Chicha:",
+                "chicha-airampo-desc": "Hergestellt aus Airampo-Samen. Es schenkt uns eine rosa Farbe und einen subtilen Geschmack von Zitrusfrüchten und blumigen Noten. Ein Muss bei La Genoveva.",
+                "entradas-title": "Vorspeisen",
+                "ramillete": "- Tamales-Bouquet:",
+                "ramillete-desc": "Vorspeise mit drei verschiedenen Arten von Tamales (Charqui-Tamale in würzigem Mote-Teig, violetter Quinoa-Käse-Tamale und Schweinefleisch-Tamale in Mais-Kürbis-Teig).",
+                "tabla": "- Anden-Vorspeisen Degustationsplatte (für zwei):",
+                "tabla-desc": "Mote mit geröstetem Charqui (Dörrfleisch), Lama-Escabeche, kandierter Oca und sautierten Kartoffeln, gerösteten Tomaten, Llajwa (scharfe Soße) und Tamale.",
+                "empanadas-title": "Empanadas",
+                "emp-carne": "- Handgeschnittenes Rindfleisch in Paprika-Teig:",
+                "emp-carne-desc": "Mit nördlichem Geschmack und bestem Rindfleisch.",
+                "emp-pollo": "- Hähnchen-Empanada in traditionellem Teig:",
+                "emp-pollo-desc": "Handgeschnittenes Hähnchen, sautiert mit Zwiebeln und einem Hauch Anden-Kartoffel.",
+                "emp-cordero": "- Puna-Lamm-Empanada in Curry-Teig:",
+                "emp-cordero-desc": "Dieser Bissen vereint den zarten Geschmack des Lamms aus der hohen Puna, umhüllt von einem fein mit Curry gewürzten Teig.",
+                "emp-quinua": "- Quinoa-Empanada in lila Mais-Teig:",
+                "emp-quinua-desc": "Gekörnte Quinoa mit Käse in Kulli-Mais-Teig, ein unvergesslicher Andengeschmack.",
+                "principales-title": "Hauptspeisen",
+                "medallon-humita": "- Gebratenes Humita-Medaillon mit rustikalem Pesto und gemischtem Salat:",
+                "medallon-humita-desc": "Ein Gericht, das die Sanftheit und Süße der traditionellen Humita in Medaillonform vereint, begleitet von einem rustikalen Pesto, das die Aromen mit frischen, krautigen Noten verstärkt, und grünem Salat, der Frische und Kontrast bietet.",
+                "yuspichi": "- Yuspichi:",
+                "yuspichi-desc": "Traditionelles Gericht aus aschegeschältem Weizen, begleitet von einer Paprika- und Rotfleischsoße. Wird im August bei landwirtschaftlichen Gemeinschaftsarbeiten (Mingas) gegessen.",
+                "carnes-title": "Unsere Fleischgerichte",
+                "cordero": "- Huateado-Lamm nach Art \"La Genoveva\":",
+                "cordero-desc": "Im Lehmofen nach prähispanischer Technik unseres tiefen Amerikas zubereitet, begleitet von einer Zitrus-Chicha-Soße.",
+                "asado": "- Asado Banderita (Querrippe):",
+                "asado-desc": "Typisch argentinischer Rindfleischschnitt, ideal für Zusammenkünfte mit Familie oder Freunden.",
+                "milanesa": "- Rinder-Milanesa:",
+                "milanesa-desc": "Klassisches paniertes und frittiertes Rindfleisch, außen knusprig und innen zart, ideal zu traditionellen Beilagen des Nordens.",
+                "llama": "- Eingelegtes Lama (Escabeche):",
+                "llama-desc": "Diese Zubereitung kombiniert das edle Lama-Fleisch und Gemüse aus der Quebrada und spiegelt die Vielfalt der Rohstoffe und kulinarischen Nutzung Jujuys wider.",
+                "guarniciones-title": "Beilagen",
+                "guarniciones-desc": "Geröstetes Süßkartoffelpüree mit Nüssen und Honig | Gemischter grüner Salat | Sautierte Anden-Kartoffeln <br>\n                            Pommes Frites | Sautierter Mote | Quinoa-Pisara",
+                "ensaladas-title": "Salate",
+                "ens-genoveva": "- Salat \"La Genoveva\":",
+                "ens-genoveva-desc": "Gemischte Blätter, Quinoa, geröstete Tomaten, kandierte Oca, Ziegenkäse, Blauschimmelkäse und geröstete Nüsse.",
+                "ens-solterito": "- Winter-Solterito:",
+                "ens-solterito-desc": "Sautierte Kartoffeln mit Quebrada-Kräutern, Ziegenkäse, gerösteten Tomaten, frischem Mais und roten Zwiebeln. Begleitet von einem Olivenöl-Zitronen-Thymian-Dressing.",
+                "sopas-title": "Suppen",
+                "sopa-majada": "- Majada-Suppe:",
+                "sopa-majada-desc": "Prähispanische Küche aus unserer Region, bei der Fleisch und Maismehl mit alten Methoden vereint werden.",
+                "sopa-verdura": "- Gemüsecremesuppe:",
+                "sopa-verdura-desc": "Ein wärmendes Gericht, das verschiedene frische Gemüsesorten aus unserer Quebrada kombiniert.",
+                "postres-title": "Desserts",
+                "vigilante": "- Anden-Vigilante:",
+                "vigilante-desc": "Perfekte Harmonie von Ziegenkäse mit Cayote-Marmelade und Quebrada-Kräutern.",
+                "helado": "- Weiße Schokoladeneiscreme mit roten Beeren:",
+                "helado-desc": "Eine Kombination, um jeden Geschmack vornehm zu genießen und seine Qualität bei jeder Verkostung zu schätzen.",
+                "anchi": "- Anchi-Creme:",
+                "anchi-desc": "Dieses Dessert aus Mais weckt Erinnerungen an die Kindheit und hat seinen Ursprung in der traditionellen Chicha-Zubereitung.",
+                "vinos-title": "Weine",
+                "vinos-jujuy-desc": "Quebrada de Humahuaca<br>Andencharakter, Mineralität und<br>extreme Ausdruckskraft.",
+                "vinos-salta-desc": "Calchaquí-Täler<br>Intensive Aromen, Kraft<br>und nördliche Tradition.",
+                "vinos-mendoza-desc": "Uco-Tal<br>Eleganz, Technik und Vielfalt.",
+                "cervezas-title": "Biere",
+                "artesanales": "CRAFT-BIERE",
+                "otras": "ANDERE",
+                "jugos-title": "Natürliche Säfte",
+                "ulpada": "- Ulpada:",
+                "ulpada-desc": "Hirtensaft auf Basis von gekochtem Mais.",
+                "jugo-hierbas": "- Quebrada-Kräutersaft:",
+                "jugo-hierbas-desc": "Saisonale Kräuter (Zitronenverbene, Arca, Muña, Burro) auf einer Zitrusbasis.",
+                "limonada": "- Limonade:",
+                "limonada-desc": "Rote Beeren oder Ingwer und Minze.",
+                "aguas-title": "Wasser<br>& Limonaden",
+                "aguas": "- Wasser",
+                "aguas-desc": "Ohne Kohlensäure | Mit Kohlensäure | Aromatisiert",
+                "gaseosas": "- Limonaden"
+            },
+            fr: {
+                "cover-subtitle": "Chichería avec Histoire",
+                "cover-btn": "Glissez ou appuyez ici",
+                "historia-title": "Notre Histoire",
+                "historia-p1": "Ce menu porte l'histoire, la culture et l'amour pour notre village. Dans chaque préparation, nous évoquons ceux que nous aimons. Nous vous invitons à découvrir, à travers nos saveurs, l'héritage de nos familles, qui ont travaillé et pris soin de la terre, en préservant des recettes millénaires.",
+                "historia-p2": "La Genoveva, ma grand-mère maternelle, a travaillé dès son plus jeune âge dans l'une des chicherías de Tilcara. Là, entourée d'arropes et de chuyas, elle a trouvé l'amour avec un agriculteur. Son existence s'est déroulée au milieu de l'arôme du bois brûlé, des tables généreuses pleines de joie partagée et de la prospérité accordée par notre Pachamama. Elle nous a laissé l'amour de nos racines en héritage.",
+                "historia-p3": "Ce menu est dédié aux femmes qui ont préservé les cuisines et leurs techniques ancestrales, et à ceux qui cultivent la terre avec respect et dévouement aujourd'hui.",
+                "chichas-title": "Les Chichas de la Genoveva",
+                "botella-chica": "Petite bouteille:",
+                "jarra-media": "Pichet ½ L:",
+                "jarra-1l": "Pichet 1 L:",
+                "maridaje": "Accord recommandé: indiqué par la ligne de couleur",
+                "chicha-maiz": "- Chicha de Maïs:",
+                "chicha-maiz-desc": "Boisson ancestrale préhispanique et emblème culturel de notre terre, présente lors de nos célébrations. Sa saveur intense et son acidité en bouche évoquent des notes de pain et une touche subtile d'agrumes. C'est un symbole d'identité, de rencontre et de mémoire de nos peuples.",
+                "chicha-mani": "- Chicha de Cacahuète:",
+                "chicha-mani-desc": "Combine des notes délicates de café avec une douceur subtile et une touche terreuse, évoquant les traditions et les moments partagés autour des célébrations de notre culture.",
+                "chicha-tecjti": "- Chicha Tecjti:",
+                "chicha-tecjti-desc": "Boisson traditionnelle élaborée avec un mélange de céréales et de noix, douce et crémeuse en bouche, avec de délicates notes de noix. Son lien avec les coutumes ancestrales en fait un choix idéal à partager, évoquant la richesse de la région.",
+                "chicha-quinoa": "- Chicha de Quinoa:",
+                "chicha-quinoa-desc": "Boisson d'autrefois de la Quebrada qui revient aujourd'hui sur notre table, où le quinoa apporte son onctuosité et s'exprime par de délicates notes épicées.",
+                "chicha-kulli": "- Chicha Kulli:",
+                "chicha-kulli-desc": "Sa couleur violette intense nous rappelle la noblesse du maïs Kulli (maïs violet). Cette chicha présente des notes fruitées et douces.",
+                "chicha-airampo": "- Chicha d'Airampo:",
+                "chicha-airampo-desc": "Élaborée avec des graines d'airampo. Elle nous offre une couleur rose et une saveur subtile d'agrumes et de notes florales. Un incontournable à La Genoveva.",
+                "entradas-title": "Entrées",
+                "ramillete": "- Bouquet de Tamales:",
+                "ramillete-desc": "Entrée avec trois types différents de tamales (tamal de charqui dans une pâte de mote épicée, tamal violet au quinoa et fromages, et tamal de porc dans une pâte de maïs et citrouille).",
+                "tabla": "- Planche de Dégustation d'Entrées Andines (pour deux):",
+                "tabla-desc": "Mote avec charqui (viande séchée) rôti, escabèche de lama, oca confite et pommes de terre sautées, tomates rôties, llajwa (sauce épicée) et tamal.",
+                "empanadas-title": "Empanadas",
+                "emp-carne": "- Bœuf coupé au couteau en pâte au paprika:",
+                "emp-carne-desc": "Avec une saveur du nord et le meilleur bœuf.",
+                "emp-pollo": "- Empanada au poulet en pâte traditionnelle:",
+                "emp-pollo-desc": "Poulet coupé au couteau sauté aux oignons et une touche de pomme de terre andine.",
+                "emp-cordero": "- Empanada d'agneau de la Puna en pâte au curry:",
+                "emp-cordero-desc": "Cette bouchée réunit la saveur tendre de l'agneau élevé dans la haute Puna, enveloppé dans une pâte délicatement parfumée au curry.",
+                "emp-quinua": "- Empanada de quinoa en pâte de maïs violet:",
+                "emp-quinua-desc": "Quinoa en grains avec fromage dans une pâte de maïs kulli, une saveur andine incontournable.",
+                "principales-title": "Plats Principaux",
+                "medallon-humita": "- Médaillon d'humita rôti avec pesto rustique et salade verte:",
+                "medallon-humita-desc": "Une proposition qui fusionne la douceur de l'humita traditionnelle au format médaillon, accompagnée d'un pesto rustique qui rehausse les saveurs avec des notes fraîches, et un mélange de feuilles vertes offrant fraîcheur et contraste.",
+                "yuspichi": "- Yuspichi:",
+                "yuspichi-desc": "Plat traditionnel à base de blé pelé aux cendres, accompagné d'une sauce aux poivrons et viande rouge. Consommé en communauté lors des mingas (travaux agricoles) en août.",
+                "carnes-title": "Nos Viandes",
+                "cordero": "- Agneau Huateado style \"La Genoveva\":",
+                "cordero-desc": "Préparé dans l'argile selon une technique préhispanique de notre Amérique profonde, accompagné d'une sauce aux agrumes à la chicha.",
+                "asado": "- Asado Banderita (Plat de côtes):",
+                "asado-desc": "Coupe de bœuf argentine typique, idéale pour se souvenir des rencontres en famille ou entre amis.",
+                "milanesa": "- Milanesa de Bœuf:",
+                "milanesa-desc": "Classique coupe de bœuf panée et frite, croustillante à l'extérieur et tendre à l'intérieur, idéale pour accompagner avec des garnitures traditionnelles du nord.",
+                "llama": "- Lama à l'escabèche:",
+                "llama-desc": "Cette préparation combine la noblesse de la viande de lama et des légumes de la Quebrada, reflétant la diversité des matières premières et l'utilisation culinaire de Jujuy.",
+                "guarniciones-title": "Garnitures",
+                "guarniciones-desc": "Purée de patate douce rôtie aux noix et miel | Salade de feuilles vertes | Pommes de terre andines sautées <br>\n                            Frites | Mote sauté | Quinoa Pisara",
+                "ensaladas-title": "Salades",
+                "ens-genoveva": "- Salade \"La Genoveva\":",
+                "ens-genoveva-desc": "Feuilles vertes, quinoa, tomates rôties, ocas confites, fromage de chèvre, roquefort et noix grillées.",
+                "ens-solterito": "- Solterito d'hiver:",
+                "ens-solterito-desc": "Pommes de terre sautées aux herbes de la Quebrada, fromage de chèvre, tomates rôties, maïs frais et oignon rouge. Accompagné d'une vinaigrette à l'huile d'olive, citron et thym.",
+                "sopas-title": "Soupes",
+                "sopa-majada": "- Soupe Majada:",
+                "sopa-majada-desc": "Cuisine préhispanique de notre région, où la viande s'associe à la farine de maïs avec des méthodes ancestrales.",
+                "sopa-verdura": "- Velouté de légumes:",
+                "sopa-verdura-desc": "Un plat réconfortant qui combine une variété de légumes frais de notre Quebrada.",
+                "postres-title": "Desserts",
+                "vigilante": "- Vigilante Andin:",
+                "vigilante-desc": "Harmonie parfaite du fromage de chèvre avec la confiture de cayote et les herbes de la Quebrada.",
+                "helado": "- Glace au chocolat blanc et fruits rouges:",
+                "helado-desc": "Une combinaison conçue pour apprécier chaque saveur de manière distinguée et en apprécier la qualité à chaque dégustation.",
+                "anchi": "- Crème d'Anchi:",
+                "anchi-desc": "Ce dessert à base de maïs évoque les saveurs de l'enfance et trouve ses origines dans la préparation traditionnelle de la chicha.",
+                "vinos-title": "Vins",
+                "vinos-jujuy-desc": "Quebrada de Humahuaca<br>Caractère andin, minéralité et<br>expression extrême.",
+                "vinos-salta-desc": "Vallées Calchaquies<br>Arômes intenses, puissance<br>et tradition du nord.",
+                "vinos-mendoza-desc": "Vallée de Uco<br>Élégance, technique et diversité.",
+                "cervezas-title": "Bières",
+                "artesanales": "ARTISANALES",
+                "otras": "AUTRES",
+                "jugos-title": "Jus Naturels",
+                "ulpada": "- Ulpada:",
+                "ulpada-desc": "Jus de bergers à base de maïs cuit.",
+                "jugo-hierbas": "- Jus d'herbes de la Quebrada:",
+                "jugo-hierbas-desc": "Herbes de saison (verveine, arca, muña, burro) accompagnées d'une base d'agrumes.",
+                "limonada": "- Limonade:",
+                "limonada-desc": "Fruits rouges ou gingembre et menthe.",
+                "aguas-title": "Eaux<br>& Sodas",
+                "aguas": "- Eaux",
+                "aguas-desc": "Plate | Gazeuse | Aromatisée",
+                "gaseosas": "- Sodas"
+            }
+        };
+
+        const langBtn = document.getElementById('lang-btn');
+        const langMenu = document.getElementById('lang-menu');
+        
+        langBtn.addEventListener('click', () => {
+            const isHidden = langMenu.classList.contains('opacity-0');
+            if (isHidden) {
+                langMenu.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-4');
+            } else {
+                langMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }
+        });
+
+        // Ocultar menú si se hace click afuera
+        document.addEventListener('click', (e) => {
+            if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+                langMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            }
+        });
+
+        function changeLanguage(lang) {
+            // Actualizar botón
+            langBtn.innerText = lang.toUpperCase();
+            
+            // Cerrar menú
+            langMenu.classList.add('opacity-0', 'pointer-events-none', 'translate-y-4');
+            
+            // Transición suave ("De otro nivel")
+            const elements = document.querySelectorAll('[data-i18n]');
+            
+            elements.forEach(el => {
+                // 1. Agregar clase de desvanecimiento
+                el.classList.add('lang-transitioning');
+            });
+            
+            // 2. Esperar a que el desvanecimiento termine (300ms)
+            setTimeout(() => {
+                elements.forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (i18n[lang][key]) {
+                        el.innerHTML = i18n[lang][key];
+                    }
+                    // 3. Quitar clase para que aparezcan
+                    el.classList.remove('lang-transitioning');
+                });
+            }, 300);
+        }
+    </script>
+
+</body>
+</html>
