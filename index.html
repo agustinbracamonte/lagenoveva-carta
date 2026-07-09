@@ -43,7 +43,7 @@
                         'pill-vinos': '#46272b'
                     },
                     fontFamily: {
-                        'oswald': ['Oswald', 'sans-serif'],
+                        'oswald': ['"Monch Antiqua"', 'serif'],
                         'outfit': ['Outfit', 'sans-serif'],
                     }
                 }
@@ -56,6 +56,26 @@
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #e5dcd3; }
         ::-webkit-scrollbar-thumb { background: #c19a62; border-radius: 4px; }
+
+        
+        @font-face {
+            font-family: 'Monch Antiqua';
+            src: url('Monch%20Antiqua/Monch%20Antiqua.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Monch Antiqua';
+            src: url('Monch%20Antiqua/Monch%20Antiqua%20Bold.ttf') format('truetype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Monch Antiqua';
+            src: url('Monch%20Antiqua/Monch%20Antiqua%20Italic.ttf') format('truetype');
+            font-weight: normal;
+            font-style: italic;
+        }
 
         /* Background pattern sutil para simular papel/textura */
         .bg-texture {
@@ -164,7 +184,7 @@
                 <span data-i18n="historia-p1">Esta carta lleva consigo la historia, la cultura y el amor por nuestro pueblo. En cada preparación evocamos a quienes amamos. Te invitamos a descubrir, a través de nuestros sabores, el legado de nuestras familias, quienes trabajaron y cuidaron la tierra, pero sobre todo preservaron preparaciones milenarias.</span>
             </p>
             <p class="text-lg md:text-xl leading-relaxed text-justify md:text-center font-light mt-4 text-genoveva-dark/90">
-                <span data-i18n="historia-p2">La Genoveva, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.</span>
+                <span data-i18n="historia-p2"><strong class="font-bold text-genoveva-gold">La Genoveva</strong>, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.</span>
             </p>
             <p class="text-lg md:text-xl leading-relaxed text-justify md:text-center font-light mt-4 italic text-genoveva-dark/90">
                 <span data-i18n="historia-p3">Esta carta está dedicada a las mujeres que han conservado las cocinas y sus técnicas ancestrales, y a quienes cultivan la tierra con respeto y dedicación en estos tiempos.</span>
@@ -189,7 +209,7 @@
                         <div class="bg-[#dfc4a2] px-6 py-2 rounded-full shadow-sm"><span data-i18n="jarra-media">Jarra ½ l:</span> $8.000</div>
                         <div class="bg-[#dfc4a2] px-6 py-2 rounded-full shadow-sm"><span data-i18n="jarra-1l">Jarra 1l:</span> $12.000</div>
                     </div>
-                    <p class="font-outfit font-medium text-base mt-6 opacity-90"><span data-i18n="maridaje">Maridaje recomendado: señalado por línea de color</span></p>
+                    <p class="font-outfit font-medium text-base mt-6 opacity-90"><span data-i18n="maridaje">Maridaje recomendado:<br>señalado por línea de color</span></p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -380,7 +400,7 @@
 
                     <!-- Guarniciones -->
                     <div class="text-center pt-8 relative reveal mt-12">
-                        <img src="ILUSTRACIONES/%23C5A074/_guarnición.png" class="absolute right-0 top-10 w-20 opacity-30 md:w-28 rotate-12 pointer-events-none" loading="lazy" alt="Guarniciones">
+                        <img src="ILUSTRACIONES/%234B2C2C/_papines.png" class="absolute right-0 top-10 w-20 opacity-30 md:w-28 rotate-12 pointer-events-none" loading="lazy" alt="Guarniciones">
                         <h2 class="bg-pill-bebidas text-genoveva-dark font-oswald text-xl uppercase tracking-widest px-8 py-2 rounded-full inline-block shadow-sm mb-6 relative z-10"><span data-i18n="guarniciones-title">Guarniciones</span></h2>
                         <p class="font-light text-genoveva-dark/90 leading-relaxed text-sm md:text-base border-t border-b border-genoveva-dark/20 py-4">
                             <span data-i18n="guarniciones-desc">Puré de batatas asadas con fruto seco y miel | Mix de hojas verde | Papas andinas salteadas <br>
@@ -729,7 +749,7 @@
 
     <!-- Selector de Idioma Flotante -->
     <div class="fixed bottom-6 left-6 z-50">
-        <button id="lang-btn" class="bg-white/40 backdrop-blur-md border border-white/50 text-genoveva-dark shadow-lg rounded-full w-12 h-12 flex items-center justify-center font-oswald text-lg transition hover:bg-white/60">
+        <button id="lang-btn" class="bg-[#916D97] text-[#f4eee6] border border-white/30 shadow-[0_4px_15px_rgba(145,109,151,0.6)] rounded-full w-12 h-12 flex items-center justify-center font-oswald text-lg transition hover:bg-[#7a5980]">
             ES
         </button>
         <div id="lang-menu" class="absolute bottom-14 left-0 bg-white/90 backdrop-blur-md border border-white/50 rounded-xl shadow-lg flex flex-col overflow-hidden transition-all duration-300 opacity-0 pointer-events-none transform translate-y-4 min-w-[120px]">
@@ -737,6 +757,7 @@
             <button onclick="changeLanguage('en')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">ENGLISH</button>
             <button onclick="changeLanguage('de')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">DEUTSCH</button>
             <button onclick="changeLanguage('fr')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">FRANÇAIS</button>
+            <button onclick="changeLanguage('pt')" class="px-5 py-3 font-oswald text-genoveva-dark hover:bg-genoveva-gold/20 transition text-left border-t border-genoveva-dark/10 tracking-wide">PORTUGUÊS</button>
         </div>
     </div>
 
@@ -778,18 +799,100 @@
     </style>
     <script>
         const i18n = {
+            pt: {
+                "cover-subtitle": "Chicheria com História",
+                "cover-btn": "Deslize ou toque aqui",
+                "historia-title": "Nossa História",
+                "historia-p1": "Este cardápio traz consigo a história, a cultura e o amor pelo nosso povo. Em cada preparação evocamos aqueles que amamos. Convidamos você a descobrir, através dos nossos sabores, o legado de nossas famílias, que trabalharam e cuidaram da terra, mas acima de tudo preservaram preparações milenares.",
+                "historia-p2": "<strong class=\"font-bold text-genoveva-gold\">La Genoveva</strong>, minha avó materna, trabalhou desde menina em uma das chicherias que havia em Tilcara. Lá, rodeada de arropes e chuyas, encontrou o amor em um agricultor. Sua existência se desenrolou entre o aroma da lenha acesa, as mesas generosas cheias de alegria compartilhada e a prosperidade que nossa Pachamama oferece. Nos deixou como legado o carinho por nossas raízes.",
+                "historia-p3": "Este cardápio é dedicado às mulheres que conservaram as cozinhas e suas técnicas ancestrais, e àqueles que cultivam a terra com respeito e dedicação nos tempos atuais.",
+                "chichas-title": "Chichas da Genoveva",
+                "botella-chica": "Garrafa pequena:",
+                "jarra-media": "Jarra ½ l:",
+                "jarra-1l": "Jarra 1l:",
+                "maridaje": "Harmonização recomendada:<br>indicada por linha de cor",
+                "chicha-maiz": "- Chicha de milho:",
+                "chicha-maiz-desc": "Bebida ancestral pré-hispânica e emblema cultural de nossa terra, presente em nossas celebrações. Sabor intenso e sua acidez na boca evocam notas de pão e um sutil toque cítrico. É um símbolo de identidade, encontro e memória de nossos povos.",
+                "chicha-mani": "- Chicha de amendoim:",
+                "chicha-mani-desc": "Combina notas delicadas de café com um doce sutil e um toque terroso, evocando tradições e momentos compartilhados em torno das celebrações de nossa cultura.",
+                "chicha-tecjti": "- Chicha tecjti:",
+                "chicha-tecjti-desc": "Bebida tradicional elaborada com uma mistura de cereais e frutas secas, de sabor suave e cremoso, com delicadas notas de noz. Seu vínculo com os costumes ancestrais a torna uma opção ideal para compartilhar evocando a riqueza da região.",
+                "chicha-quinoa": "- Chicha de quinoa:",
+                "chicha-quinoa-desc": "Bebida de outrora da Quebrada que hoje volta à nossa mesa, onde a quinoa traz sua cremosidade e se expressa com delicadas notas de especiarias.",
+                "chicha-kulli": "- Chicha kulli:",
+                "chicha-kulli-desc": "Sua cor roxa intensa nos lembra a nobreza do milho Kulli (milho Roxo). Esta chicha tem notas frutadas e doces.",
+                "chicha-airampo": "- Chicha de airampo:",
+                "chicha-airampo-desc": "Elaborada com as sementes de airampo. Nos presenteia com uma cor rosa e sabor sutil de frutas cítricas e notas florais. Imperdível na Genoveva.",
+                "entradas-title": "Entradas",
+                "tamal": "- Tamal Genoveva:",
+                "tamal-desc": "Massa de milho branco mote recheada de carne, acompanhada de llajua.",
+                "humita": "- Humita (Pamonha):",
+                "humita-desc": "Elaborada com milho recém-colhido, perfumada com manjericão e queijo de cabra.",
+                "empanadas-title": "Empanadas",
+                "empanada-carne": "- Empanada de carne tradicional",
+                "empanada-queso": "- Empanada de queijo e manjericão",
+                "empanada-quinoa": "- Empanada de quinoa e queijo",
+                "principales-title": "Pratos Principais",
+                "cazuela": "- Caçarola de lhamas:",
+                "cazuela-desc": "Um clássico refogado com vegetais da nossa Quebrada e pimentão que lhe confere um sabor intenso. Acompanhado de queijo de cabra grelhado.",
+                "picante": "- Picante de língua:",
+                "picante-desc": "Estufado longo com especiarias e ingredientes originários como a pimenta. Trazendo este prato picante emblemático da região andina.",
+                "bife": "- Bife à crioula:",
+                "bife-desc": "Estufado longo de bife cozido junto com cebola, pimentões, cenoura, tomate e batatas, servido com seu suco. Uma preparação ideal para compartilhar e valorizar a cocção lenta em nossa cozinha.",
+                "milanesa": "- Milanesa frita:",
+                "milanesa-desc": "Clássico corte de bife empanado e frito, crocante por fora e macio por dentro, ideal para acompanhar com guarnições tradicionais do norte.",
+                "llama": "- Lhama escabeche:",
+                "llama-desc": "Esta preparação combina a nobreza da carne de lhama e os vegetais da Quebrada, refletindo a diversidade de matérias-primas e a utilidade culinária de Jujuy.",
+                "guarniciones-title": "Guarnições",
+                "guarniciones-desc": "Purê de batata doce assada com nozes e mel | Mix de folhas verdes | Batatinhas andinas salteadas <br>\n                            Batatas fritas | Mote salteado | Quinoa Pisara",
+                "ensaladas-title": "Saladas",
+                "ens-genoveva": "- Salada \"La Genoveva\":",
+                "ens-genoveva-desc": "Folhas verdes, quinoa, tomates assados, ocas cristalizadas, queijo de cabra, queijo azul e nozes tostadas.",
+                "ens-solterito": "- Solterito de Inverno:",
+                "ens-solterito-desc": "Batatas salteadas com ervas da Quebrada, queijo de cabra, tomates assados, milho fresco e cebola roxa. Acompanhado de vinagrete com azeite de oliva, limão e tomilho.",
+                "sopas-title": "Sopas",
+                "sopa-majada": "- Sopa Majada:",
+                "sopa-majada-desc": "Cozinha pré-hispânica de nossa área, onde a carne se combina com farinha de milho usando métodos ancestrais.",
+                "sopa-verdura": "- Creme de vegetais:",
+                "sopa-verdura-desc": "Um prato reconfortante que combina uma variedade de vegetais frescos da nossa Quebrada.",
+                "postres-title": "Sobremesas",
+                "vigilante": "- Vigilante Andino:",
+                "vigilante-desc": "Harmonia perfeita de queijo de cabra acompanhado de doce de cayote e ervas da Quebrada.",
+                "helado": "- Sorvete de chocolate branco e frutas vermelhas:",
+                "helado-desc": "Uma combinação elaborada para desfrutar de cada sabor de forma destacada e apreciar sua qualidade em cada mordida.",
+                "anchi": "- Creme de anchi:",
+                "anchi-desc": "Esta sobremesa elaborada com milho evoca os sabores da infância e tem sua origem na preparação tradicional da chicha.",
+                "vinos-title": "Vinhos",
+                "vinos-jujuy-desc": "Quebrada de Humahuaca<br>Caráter andino, mineralidade e<br>extrema expressão.",
+                "vinos-salta-desc": "Vales Calchaquíes<br>Aromas intensos, força<br>e tradição nortenha.",
+                "vinos-mendoza-desc": "Vale de Uco<br>Elegância, técnica e diversidade.",
+                "cervezas-title": "Cervejas",
+                "artesanales": "ARTESANAIS",
+                "otras": "OUTRAS",
+                "jugos-title": "Sucos Naturais",
+                "ulpada": "- Ulpada:",
+                "ulpada-desc": "Suco de pastores à base de milho cozido.",
+                "jugo-hierbas": "- Suco de ervas da Quebrada:",
+                "jugo-hierbas-desc": "Ervas da estação (cidreira, arca, muña, burro) acompanhadas de uma base cítrica.",
+                "limonada": "- Limonada:",
+                "limonada-desc": "Frutas vermelhas ou gengibre e hortelã.",
+                "aguas-title": "Águas<br>& Refris",
+                "aguas": "- Águas",
+                "aguas-desc": "Sem gás | Com gás | Saborizadas",
+                "gaseosas": "- Refrigerantes"
+},
             es: {
                 "cover-subtitle": "Chichería con Historia",
                 "cover-btn": "Desliza o toca aquí",
                 "historia-title": "Nuestra Historia",
                 "historia-p1": "Esta carta lleva consigo la historia, la cultura y el amor por nuestro pueblo. En cada preparación evocamos a quienes amamos. Te invitamos a descubrir, a través de nuestros sabores, el legado de nuestras familias, quienes trabajaron y cuidaron la tierra, pero sobre todo preservaron preparaciones milenarias.",
-                "historia-p2": "La Genoveva, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.",
+                "historia-p2": "<strong class="font-bold text-genoveva-gold">La Genoveva</strong>, mi abuela materna, trabajó desde niña en una de las chicherías que tenía Tilcara. Allí, rodeada de arropes y chuyas, halló el amor en un agricultor. Su existencia se desarrolló entre el aroma de la leña encendida, las mesas generosas llenas de alegría compartida y la prosperidad que brinda nuestra Pachamama. Nos dejó como legado el cariño por nuestras raíces.",
                 "historia-p3": "Esta carta está dedicada a las mujeres que han conservado las cocinas y sus técnicas ancestrales, y a quienes cultivan la tierra con respeto y dedicación en estos tiempos.",
                 "chichas-title": "Chichas de la Genoveva",
                 "botella-chica": "Botella chica:",
                 "jarra-media": "Jarra ½ l:",
                 "jarra-1l": "Jarra 1l:",
-                "maridaje": "Maridaje recomendado: señalado por línea de color",
+                "maridaje": "Maridaje recomendado:<br>señalado por línea de color",
                 "chicha-maiz": "- Chicha de maíz:",
                 "chicha-maiz-desc": "Bebida ancestral prehispánica y emblema cultural de nuestra tierra, presente en nuestras celebraciones. Sabor intenso y su acidez en boca evocan notas a pan y un sutil dejo cítrico. Es un símbolo de identidad, encuentro y memoria de nuestros pueblos.",
                 "chicha-mani": "- Chicha de maní:",
