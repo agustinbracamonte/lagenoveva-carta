@@ -1289,9 +1289,18 @@
             setTimeout(() => {
                 elements.forEach(el => {
                     const key = el.getAttribute('data-i18n');
-                    if (i18n[lang][key]) {
-                        el.innerHTML = i18n[lang][key];
+                    
+                    try {
+                        if (i18n[lang] && i18n[lang][key]) {
+                            el.innerHTML = i18n[lang][key];
+                        } else if (i18n['es'] && i18n['es'][key]) {
+                            // Fallback seguro a español si llegara a faltar la traducción
+                            el.innerHTML = i18n['es'][key];
+                        }
+                    } catch (e) {
+                        console.error('Error traduciendo key:', key, e);
                     }
+                    
                     // 3. Quitar clase para que aparezcan
                     el.classList.remove('lang-transitioning');
                 });
